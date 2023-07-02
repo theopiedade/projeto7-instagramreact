@@ -16,7 +16,7 @@ export default function Stories() {
         <div class="stories">
             {
              storiesList.map( stories => 
-                <Story img={stories.img} txt={stories.txt}/>
+                <Story key={stories.txt} img={stories.img} txt={stories.txt}/>
              )
             
             }
