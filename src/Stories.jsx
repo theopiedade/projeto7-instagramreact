@@ -18,7 +18,7 @@ export default function Stories() {
              storiesList.map( stories => 
                 <Story key={stories.txt} img={stories.img} txt={stories.txt}/>
              )
-            
+      
             }
     
 
