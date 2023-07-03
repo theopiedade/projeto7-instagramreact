@@ -13,12 +13,12 @@ export default function Post(props) {
     function alterLike(props) {
       if (heartLike === "heart-outline") { 
         setHeartLike("heart");
-        setHeartColor("red");
+        setHeartColor("favorite");
         setLikeCount(likeCount+1);
        }
       else if (props !== "img")  {
         setHeartLike("heart-outline");
-        setHeartColor("black");
+        setHeartColor("");
         setLikeCount(likeCount-1);
       }
     }
@@ -36,7 +36,7 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
-              <img data-test="post-image" src={props.img} alt={props.imgTxt} onDoubleClick={() => alterLike("img")}/>
+              <img data-test="post-image" src={props.img} alt={props.imgTxt} onClick={() => alterLike("img")} onDoubleClick={() => alterLike("img")}/>
             </div>
 
             <div class="fundo">
