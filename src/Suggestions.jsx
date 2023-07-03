@@ -1,92 +1,28 @@
-export default Suggestion() {
+import Suggestion from "./Suggestion";
+
+const suggestionList = [
+  { img: "/assets/img/bad.vibes.memes.svg", txt: "bad.vibes.memes", state: "Segue você" },
+  { img: "/assets/img/chibirdart.svg", txt: "chibirdart", state: "Segue você" },
+  { img: "/assets/img/razoesparaacreditar.svg", txt: "razoesparaacreditar", state: "Novo no Instagram" },
+  { img: "/assets/img/adorable_animals.svg", txt: "adorable_animals", state: "Segue você" },
+  { img: "/assets/img/smallcutecats.svg", txt: "smallcutecats", state: "Segue você" }
+]
+
+export default function Suggestions() {
     return (
-    <div class="sidebar">
-        <div class="usuario">
-          <img src="/assets/img/catanacomics.svg" alt="imagem de perfil"/>
-          <div class="texto">
-            <span>
-              <strong>catanacomics</strong>
-              <ion-icon name="pencil"></ion-icon>
-            </span>
-          </div>
-        </div>
+      <div class="sugestoes">
+                  <div class="titulo">
+                      Sugestões para você
+                      <div>Ver tudo</div>
+                  </div>
 
-        <div class="sugestoes">
-          <div class="titulo">
-            Sugestões para você
-            <div>Ver tudo</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="/assets/img/bad.vibes.memes.svg" alt="bad.vibes.memes.svg"/>
-              <div class="texto">
-                <div class="nome">bad.vibes.memes</div>
-                <div class="razao">Segue você</div>
-              </div>
+            {
+             suggestionList.map( suggest => 
+                <Suggestion key={suggest.txt} img={suggest.img} txt={suggest.txt} state={suggest.state} />
+             )
+      
+            }
             </div>
 
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="/assets/img/chibirdart.svg" alt="chibirdart"/>
-              <div class="texto">
-                <div class="nome">chibirdart</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="/assets/img/razoesparaacreditar.svg" alt="razoesparaacreditar" />
-              <div class="texto">
-                <div class="nome">razoesparaacreditar</div>
-                <div class="razao">Novo no Instagram</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="/assets/img/adorable_animals.svg" alt="adorable_animals"/>
-              <div class="texto">
-                <div class="nome">adorable_animals</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-
-          <div class="sugestao">
-            <div class="usuario">
-              <img src="/assets/img/smallcutecats.svg" alt="smallcutecats"/>
-              <div class="texto">
-                <div class="nome">smallcutecats</div>
-                <div class="razao">Segue você</div>
-              </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-          </div>
-        </div>
-
-        <div class="links">
-          Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
-          Hashtags • Idioma
-        </div>
-
-        <div class="copyright">
-          © 2021 INSTAGRAM DO FACEBOOK
-        </div>
-    </div>
-
-    )
-}
+    );
+  }
