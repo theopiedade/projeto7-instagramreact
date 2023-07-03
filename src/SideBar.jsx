@@ -1,14 +1,28 @@
 import Suggestions from "./Suggestions";
+import { useState } from "react";
 
 export default function SideBar() {
+    const [username, setUsername] = useState("catanomics");
+    const [userImg, setUserImg] = useState("assets/img/catanacomics.svg");
+
+    function alterUser() {
+      let newUser = prompt("Informe seu username");
+      if (newUser) setUsername(newUser);
+    }
+
+    function alterImg() {
+        let newImg = prompt("Informe o link da sua imagem");
+        if (newImg) setUserImg(newImg);
+      }
+
     return (
         <div class="sidebar">
             <div class="usuario">
-                <img src="assets/img/catanacomics.svg" alt="imagem de perfil"/>
+                <img onClick={() => alterImg()} src={userImg} alt="imagem de perfil"/>
                 <div class="texto">
                     <span>
-                    <strong>catanacomics</strong>
-                    <ion-icon name="pencil"></ion-icon>
+                    <strong>{username}</strong>
+                    <ion-icon name="pencil" onClick={() => alterUser()}></ion-icon>
                     </span>
                 </div>
             </div>
